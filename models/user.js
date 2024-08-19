@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+
 const userSchema = new Schema({
     name: {type: String, required: true},
     email: {
@@ -37,4 +38,4 @@ userSchema.pre('save', async function(next) {
     return next();
   });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema, );
